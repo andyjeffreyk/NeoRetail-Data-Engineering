@@ -1,0 +1,162 @@
+[
+  {
+    "source": "raw\\customers\\customers.csv.gz",
+    "destination": "data\\bronze\\raw\\customers\\customers.csv.gz",
+    "status": "SUCCESS",
+    "rows": 100000,
+    "columns": [
+      "customer_id",
+      "customer_key",
+      "region",
+      "segment",
+      "signup_date",
+      "consent_marketing",
+      "email_pseudo",
+      "phone_pseudo",
+      "is_active"
+    ],
+    "column_count": 9,
+    "size_bytes": 2986678,
+    "sha256": "e2296007aaf4c10e1ae213176b2cfa044aa190d60d911d3081dabac727b80449",
+    "ingested_at_utc": "2026-10-27T11:39:07.807286+00:00"
+  },
+  {
+    "source": "raw\\products\\products.csv.gz",
+    "destination": "data\\bronze\\raw\\products\\products.csv.gz",
+    "status": "SUCCESS",
+    "rows": 20000,
+    "columns": [
+      "product_id",
+      "product_key",
+      "sku",
+      "category",
+      "subcategory",
+      "brand",
+      "unit_cost",
+      "list_price",
+      "vat_rate",
+      "is_active",
+      "effective_from",
+      "effective_to",
+      "is_current"
+    ],
+    "column_count": 13,
+    "size_bytes": 419058,
+    "sha256": "38529324aa409cf12de5a5395f6e4f29c61998700ed34ef22ae8be14dc4127b5",
+    "ingested_at_utc": "2026-10-27T11:39:07.900494+00:00"
+  },
+  {
+    "source": "raw\\stores\\stores.csv.gz",
+    "destination": "data\\bronze\\raw\\stores\\stores.csv.gz",
+    "status": "SUCCESS",
+    "rows": 200,
+    "columns": [
+      "store_id",
+      "store_key",
+      "city",
+      "format",
+      "is_active"
+    ],
+    "column_count": 5,
+    "size_bytes": 1553,
+    "sha256": "e677c5302e4aa97bcebbf1853810f1187cd1cbf524b05dcfa198406207fd4f67",
+    "ingested_at_utc": "2026-10-27T11:39:07.907490+00:00"
+  },
+  {
+    "source": "raw\\orders\\orders.csv.gz",
+    "destination": "data\\bronze\\raw\\orders\\orders.csv.gz",
+    "status": "SUCCESS",
+    "rows": 500000,
+    "columns": [
+      "order_id",
+      "order_ts",
+      "customer_id",
+      "channel",
+      "payment_method",
+      "status",
+      "promo_code"
+    ],
+    "column_count": 7,
+    "size_bytes": 9688772,
+    "sha256": "f34a9d57535923498fb522a6376a76b02b59f5894f3ada8b3e68b285c8d50160",
+    "ingested_at_utc": "2026-10-27T11:39:09.559881+00:00"
+  },
+  {
+    "source": "raw\\orders\\order_items.csv.gz",
+    "destination": "data\\bronze\\raw\\orders\\order_items.csv.gz",
+    "status": "SUCCESS",
+    "rows": 1000000,
+    "columns": [
+      "order_item_id",
+      "order_id",
+      "product_id",
+      "qty",
+      "unit_price",
+      "discount_rate",
+      "net_amount"
+    ],
+    "column_count": 7,
+    "size_bytes": 20675430,
+    "sha256": "d9be12e07b7501b6702f5e95aa4719567c1ccf2e7ee2f1463abb5f34ea7d4340",
+    "ingested_at_utc": "2026-10-27T11:39:11.862430+00:00"
+  },
+  {
+    "source": "raw\\pos\\pos_sales.csv.gz",
+    "destination": "data\\bronze\\raw\\pos\\pos_sales.csv.gz",
+    "status": "SUCCESS",
+    "rows": 500000,
+    "columns": [
+      "sale_id",
+      "sale_ts",
+      "store_id",
+      "customer_id",
+      "product_id",
+      "qty",
+      "unit_price",
+      "discount_rate",
+      "net_amount"
+    ],
+    "column_count": 9,
+    "size_bytes": 15860426,
+    "sha256": "ec1a9f35617a4951d17c47b36dd2120468a4a28ab3f20d0f53818ff324eb553d",
+    "ingested_at_utc": "2026-10-27T11:39:13.213691+00:00"
+  },
+  {
+    "source": "raw\\returns\\returns.csv.gz",
+    "destination": "data\\bronze\\raw\\returns\\returns.csv.gz",
+    "status": "SUCCESS",
+    "rows": 100000,
+    "columns": [
+      "return_id",
+      "return_ts",
+      "order_id",
+      "product_id",
+      "return_qty",
+      "reason",
+      "return_amount"
+    ],
+    "column_count": 7,
+    "size_bytes": 2678845,
+    "sha256": "53cbd47f4cf99fb9a6b7a93d237db83d16830acfb2274239928d102a2ee6df53",
+    "ingested_at_utc": "2026-10-27T11:39:13.439480+00:00"
+  },
+  {
+    "source": "raw\\erp\\gl_entries.csv.gz",
+    "destination": "data\\bronze\\raw\\erp\\gl_entries.csv.gz",
+    "status": "SUCCESS",
+    "rows": 100000,
+    "columns": [
+      "entry_id",
+      "posting_date",
+      "account_code",
+      "cost_center",
+      "document_type",
+      "amount",
+      "currency"
+    ],
+    "column_count": 7,
+    "size_bytes": 1347725,
+    "sha256": "58d8e222278c4b35810db6af88fb6b9b89b7a564269576e60daf222a7c9b04f6",
+    "ingested_at_utc": "2026-10-27T11:39:13.634306+00:00"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "status":"PASS",
+  "dimensions":{
+    "dim_customer":100000,
+    "dim_product":20000,
+    "dim_store":200,
+    "dim_date":608
+  },
+  "date_min":"2025-01-01",
+  "date_max":"2026-08-31",
+  "notes":[
+    "Une ligne par identifiant métier pour clients, produits et magasins.",
+    "Les clés techniques sont générées à partir du tri des identifiants.",
+    "Les clés techniques peuvent changer si les données ou le tri changent.",
+    "Aucun historique SCD2 n'est reconstruit dans cette version."
+  ]
+}

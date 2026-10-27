@@ -1,0 +1,292 @@
+[
+  {
+    "table": "customers",
+    "source": "data\\bronze\\raw\\customers\\customers.csv.gz",
+    "output": "data\\silver\\customers.parquet",
+    "status": "SUCCESS",
+    "source_rows": 100000,
+    "silver_rows": 100000,
+    "primary_key": "customer_id",
+    "missing_primary_key": 0,
+    "missing_values_by_column": {
+      "customer_id": 0,
+      "customer_key": 0,
+      "region": 100,
+      "segment": 0,
+      "signup_date": 0,
+      "consent_marketing": 0,
+      "email_pseudo": 0,
+      "phone_pseudo": 0,
+      "is_active": 0
+    },
+    "conversion_errors_by_column": {
+      "signup_date": 0,
+      "consent_marketing": 0,
+      "is_active": 0
+    },
+    "columns": [
+      "customer_id",
+      "customer_key",
+      "region",
+      "segment",
+      "signup_date",
+      "consent_marketing",
+      "email_pseudo",
+      "phone_pseudo",
+      "is_active"
+    ],
+    "parquet_compression": "snappy"
+  },
+  {
+    "table": "products",
+    "source": "data\\bronze\\raw\\products\\products.csv.gz",
+    "output": "data\\silver\\products.parquet",
+    "status": "SUCCESS",
+    "source_rows": 20000,
+    "silver_rows": 20000,
+    "primary_key": "product_id",
+    "missing_primary_key": 0,
+    "missing_values_by_column": {
+      "product_id": 0,
+      "product_key": 0,
+      "sku": 0,
+      "category": 0,
+      "subcategory": 0,
+      "brand": 0,
+      "unit_cost": 0,
+      "list_price": 0,
+      "vat_rate": 0,
+      "is_active": 0,
+      "effective_from": 0,
+      "effective_to": 20000,
+      "is_current": 0
+    },
+    "conversion_errors_by_column": {
+      "unit_cost": 0,
+      "list_price": 0,
+      "vat_rate": 0,
+      "is_active": 0,
+      "effective_from": 0,
+      "effective_to": 0,
+      "is_current": 0
+    },
+    "columns": [
+      "product_id",
+      "product_key",
+      "sku",
+      "category",
+      "subcategory",
+      "brand",
+      "unit_cost",
+      "list_price",
+      "vat_rate",
+      "is_active",
+      "effective_from",
+      "effective_to",
+      "is_current"
+    ],
+    "parquet_compression": "snappy"
+  },
+  {
+    "table": "stores",
+    "source": "data\\bronze\\raw\\stores\\stores.csv.gz",
+    "output": "data\\silver\\stores.parquet",
+    "status": "SUCCESS",
+    "source_rows": 200,
+    "silver_rows": 200,
+    "primary_key": "store_id",
+    "missing_primary_key": 0,
+    "missing_values_by_column": {
+      "store_id": 0,
+      "store_key": 0,
+      "city": 0,
+      "format": 0,
+      "is_active": 0
+    },
+    "conversion_errors_by_column": {
+      "is_active": 0
+    },
+    "columns": [
+      "store_id",
+      "store_key",
+      "city",
+      "format",
+      "is_active"
+    ],
+    "parquet_compression": "snappy"
+  },
+  {
+    "table": "orders",
+    "source": "data\\bronze\\raw\\orders\\orders.csv.gz",
+    "output": "data\\silver\\orders.parquet",
+    "status": "SUCCESS",
+    "source_rows": 500000,
+    "silver_rows": 500000,
+    "primary_key": "order_id",
+    "missing_primary_key": 0,
+    "missing_values_by_column": {
+      "order_id": 0,
+      "order_ts": 0,
+      "customer_id": 0,
+      "channel": 0,
+      "payment_method": 0,
+      "status": 0,
+      "promo_code": 0
+    },
+    "conversion_errors_by_column": {
+      "order_ts": 0
+    },
+    "columns": [
+      "order_id",
+      "order_ts",
+      "customer_id",
+      "channel",
+      "payment_method",
+      "status",
+      "promo_code"
+    ],
+    "parquet_compression": "snappy"
+  },
+  {
+    "table": "order_items",
+    "source": "data\\bronze\\raw\\orders\\order_items.csv.gz",
+    "output": "data\\silver\\order_items.parquet",
+    "status": "SUCCESS",
+    "source_rows": 1000000,
+    "silver_rows": 1000000,
+    "primary_key": "order_item_id",
+    "missing_primary_key": 0,
+    "missing_values_by_column": {
+      "order_item_id": 0,
+      "order_id": 0,
+      "product_id": 0,
+      "qty": 0,
+      "unit_price": 0,
+      "discount_rate": 0,
+      "net_amount": 0
+    },
+    "conversion_errors_by_column": {
+      "qty": 0,
+      "unit_price": 0,
+      "discount_rate": 0,
+      "net_amount": 0
+    },
+    "columns": [
+      "order_item_id",
+      "order_id",
+      "product_id",
+      "qty",
+      "unit_price",
+      "discount_rate",
+      "net_amount"
+    ],
+    "parquet_compression": "snappy"
+  },
+  {
+    "table": "pos_sales",
+    "source": "data\\bronze\\raw\\pos\\pos_sales.csv.gz",
+    "output": "data\\silver\\pos_sales.parquet",
+    "status": "SUCCESS",
+    "source_rows": 500000,
+    "silver_rows": 500000,
+    "primary_key": "sale_id",
+    "missing_primary_key": 0,
+    "missing_values_by_column": {
+      "sale_id": 0,
+      "sale_ts": 0,
+      "store_id": 0,
+      "customer_id": 139630,
+      "product_id": 0,
+      "qty": 0,
+      "unit_price": 0,
+      "discount_rate": 0,
+      "net_amount": 0
+    },
+    "conversion_errors_by_column": {
+      "sale_ts": 0,
+      "qty": 0,
+      "unit_price": 0,
+      "discount_rate": 0,
+      "net_amount": 0
+    },
+    "columns": [
+      "sale_id",
+      "sale_ts",
+      "store_id",
+      "customer_id",
+      "product_id",
+      "qty",
+      "unit_price",
+      "discount_rate",
+      "net_amount"
+    ],
+    "parquet_compression": "snappy"
+  },
+  {
+    "table": "returns",
+    "source": "data\\bronze\\raw\\returns\\returns.csv.gz",
+    "output": "data\\silver\\returns.parquet",
+    "status": "SUCCESS",
+    "source_rows": 100000,
+    "silver_rows": 100000,
+    "primary_key": "return_id",
+    "missing_primary_key": 0,
+    "missing_values_by_column": {
+      "return_id": 0,
+      "return_ts": 0,
+      "order_id": 0,
+      "product_id": 0,
+      "return_qty": 0,
+      "reason": 0,
+      "return_amount": 0
+    },
+    "conversion_errors_by_column": {
+      "return_ts": 0,
+      "return_qty": 0,
+      "return_amount": 0
+    },
+    "columns": [
+      "return_id",
+      "return_ts",
+      "order_id",
+      "product_id",
+      "return_qty",
+      "reason",
+      "return_amount"
+    ],
+    "parquet_compression": "snappy"
+  },
+  {
+    "table": "gl_entries",
+    "source": "data\\bronze\\raw\\erp\\gl_entries.csv.gz",
+    "output": "data\\silver\\gl_entries.parquet",
+    "status": "SUCCESS",
+    "source_rows": 100000,
+    "silver_rows": 100000,
+    "primary_key": "entry_id",
+    "missing_primary_key": 0,
+    "missing_values_by_column": {
+      "entry_id": 0,
+      "posting_date": 0,
+      "account_code": 0,
+      "cost_center": 0,
+      "document_type": 0,
+      "amount": 0,
+      "currency": 0
+    },
+    "conversion_errors_by_column": {
+      "posting_date": 0,
+      "amount": 0
+    },
+    "columns": [
+      "entry_id",
+      "posting_date",
+      "account_code",
+      "cost_center",
+      "document_type",
+      "amount",
+      "currency"
+    ],
+    "parquet_compression": "snappy"
+  }
+]

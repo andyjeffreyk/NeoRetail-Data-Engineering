@@ -1,0 +1,9 @@
+﻿file,status,rows,column_count,missing_key_rows,duplicate_key_rows,duplicate_exact_rows
+raw/customers/customers.csv.gz,SUCCESS,100000,9,0,0,0
+raw/products/products.csv.gz,SUCCESS,20000,13,0,0,0
+raw/stores/stores.csv.gz,SUCCESS,200,5,0,0,0
+raw/orders/orders.csv.gz,SUCCESS,500000,7,0,0,0
+raw/orders/order_items.csv.gz,SUCCESS,1000000,7,0,0,0
+raw/pos/pos_sales.csv.gz,SUCCESS,500000,9,0,0,0
+raw/returns/returns.csv.gz,SUCCESS,100000,7,0,0,0
+raw/erp/gl_entries.csv.gz,SUCCESS,100000,7,0,0,0

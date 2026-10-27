@@ -1,0 +1,66 @@
+[
+  {
+    "table": "orders",
+    "column": "customer_id",
+    "rows_checked": 500000,
+    "missing_references": 0,
+    "orphan_references": 0,
+    "status": "PASS"
+  },
+  {
+    "table": "order_items",
+    "column": "order_id",
+    "rows_checked": 1000000,
+    "missing_references": 0,
+    "orphan_references": 0,
+    "status": "PASS"
+  },
+  {
+    "table": "order_items",
+    "column": "product_id",
+    "rows_checked": 1000000,
+    "missing_references": 0,
+    "orphan_references": 0,
+    "status": "PASS"
+  },
+  {
+    "table": "pos_sales",
+    "column": "store_id",
+    "rows_checked": 500000,
+    "missing_references": 0,
+    "orphan_references": 0,
+    "status": "PASS"
+  },
+  {
+    "table": "pos_sales",
+    "column": "customer_id",
+    "rows_checked": 500000,
+    "missing_references": 139630,
+    "orphan_references": 0,
+    "status": "REVIEW"
+  },
+  {
+    "table": "pos_sales",
+    "column": "product_id",
+    "rows_checked": 500000,
+    "missing_references": 0,
+    "orphan_references": 0,
+    "status": "PASS"
+  },
+  {
+    "table": "returns",
+    "column": "order_id",
+    "rows_checked": 100000,
+    "missing_references": 0,
+    "orphan_references": 0,
+    "status": "PASS"
+  },
+  {
+    "table": "returns",
+    "column": "product_id",
+    "rows_checked": 100000,
+    "missing_references": 0,
+    "orphan_references": 0,
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,196 @@
+{
+  "generated_at_utc": "2026-10-21T11:43:28.007137+00:00",
+  "source_layer": "Bronze",
+  "results": [
+    {
+      "file": "raw/customers/customers.csv.gz",
+      "status": "SUCCESS",
+      "rows": 100000,
+      "columns": [
+        "customer_id",
+        "customer_key",
+        "region",
+        "segment",
+        "signup_date",
+        "consent_marketing",
+        "email_pseudo",
+        "phone_pseudo",
+        "is_active"
+      ],
+      "column_count": 9,
+      "null_counts": {
+        "region": 100
+      },
+      "missing_key_rows": 0,
+      "duplicate_key_rows": 0,
+      "duplicate_exact_rows": 0,
+      "checked_key_columns": [
+        "customer_id"
+      ]
+    },
+    {
+      "file": "raw/products/products.csv.gz",
+      "status": "SUCCESS",
+      "rows": 20000,
+      "columns": [
+        "product_id",
+        "product_key",
+        "sku",
+        "category",
+        "subcategory",
+        "brand",
+        "unit_cost",
+        "list_price",
+        "vat_rate",
+        "is_active",
+        "effective_from",
+        "effective_to",
+        "is_current"
+      ],
+      "column_count": 13,
+      "null_counts": {
+        "effective_to": 20000
+      },
+      "missing_key_rows": 0,
+      "duplicate_key_rows": 0,
+      "duplicate_exact_rows": 0,
+      "checked_key_columns": [
+        "product_id"
+      ]
+    },
+    {
+      "file": "raw/stores/stores.csv.gz",
+      "status": "SUCCESS",
+      "rows": 200,
+      "columns": [
+        "store_id",
+        "store_key",
+        "city",
+        "format",
+        "is_active"
+      ],
+      "column_count": 5,
+      "null_counts": {},
+      "missing_key_rows": 0,
+      "duplicate_key_rows": 0,
+      "duplicate_exact_rows": 0,
+      "checked_key_columns": [
+        "store_id"
+      ]
+    },
+    {
+      "file": "raw/orders/orders.csv.gz",
+      "status": "SUCCESS",
+      "rows": 500000,
+      "columns": [
+        "order_id",
+        "order_ts",
+        "customer_id",
+        "channel",
+        "payment_method",
+        "status",
+        "promo_code"
+      ],
+      "column_count": 7,
+      "null_counts": {},
+      "missing_key_rows": 0,
+      "duplicate_key_rows": 0,
+      "duplicate_exact_rows": 0,
+      "checked_key_columns": [
+        "order_id"
+      ]
+    },
+    {
+      "file": "raw/orders/order_items.csv.gz",
+      "status": "SUCCESS",
+      "rows": 1000000,
+      "columns": [
+        "order_item_id",
+        "order_id",
+        "product_id",
+        "qty",
+        "unit_price",
+        "discount_rate",
+        "net_amount"
+      ],
+      "column_count": 7,
+      "null_counts": {},
+      "missing_key_rows": 0,
+      "duplicate_key_rows": 0,
+      "duplicate_exact_rows": 0,
+      "checked_key_columns": [
+        "order_item_id"
+      ]
+    },
+    {
+      "file": "raw/pos/pos_sales.csv.gz",
+      "status": "SUCCESS",
+      "rows": 500000,
+      "columns": [
+        "sale_id",
+        "sale_ts",
+        "store_id",
+        "customer_id",
+        "product_id",
+        "qty",
+        "unit_price",
+        "discount_rate",
+        "net_amount"
+      ],
+      "column_count": 9,
+      "null_counts": {
+        "customer_id": 139630
+      },
+      "missing_key_rows": 0,
+      "duplicate_key_rows": 0,
+      "duplicate_exact_rows": 0,
+      "checked_key_columns": [
+        "sale_id"
+      ]
+    },
+    {
+      "file": "raw/returns/returns.csv.gz",
+      "status": "SUCCESS",
+      "rows": 100000,
+      "columns": [
+        "return_id",
+        "return_ts",
+        "order_id",
+        "product_id",
+        "return_qty",
+        "reason",
+        "return_amount"
+      ],
+      "column_count": 7,
+      "null_counts": {},
+      "missing_key_rows": 0,
+      "duplicate_key_rows": 0,
+      "duplicate_exact_rows": 0,
+      "checked_key_columns": [
+        "return_id"
+      ]
+    },
+    {
+      "file": "raw/erp/gl_entries.csv.gz",
+      "status": "SUCCESS",
+      "rows": 100000,
+      "columns": [
+        "entry_id",
+        "posting_date",
+        "account_code",
+        "cost_center",
+        "document_type",
+        "amount",
+        "currency"
+      ],
+      "column_count": 7,
+      "null_counts": {},
+      "missing_key_rows": 0,
+      "duplicate_key_rows": 0,
+      "duplicate_exact_rows": 0,
+      "checked_key_columns": [
+        "entry_id"
+      ]
+    }
+  ]
+}

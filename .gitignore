@@ -1,0 +1,37 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Secrets et variables locales
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials/
+
+# Données volumineuses et données sources
+data/bronze/
+data/silver/
+data/gold/
+data/raw/
+*.parquet
+*.csv.gz
+
+# Bases locales et fichiers temporaires
+*.db
+*.sqlite
+*.sqlite3
+*.log
+.DS_Store
+Thumbs.db
+
+# Outils et environnements locaux
+.idea/
+.vscode/
+.pytest_cache/
+.mypy_cache/

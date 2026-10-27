@@ -1,0 +1,229 @@
+{
+  "tables": [
+    {
+      "table": "customers",
+      "status": "PASS",
+      "expected_rows": 100000,
+      "actual_rows": 100000,
+      "missing_primary_keys": 0,
+      "duplicate_primary_keys": 0,
+      "columns": [
+        "customer_id",
+        "customer_key",
+        "region",
+        "segment",
+        "signup_date",
+        "consent_marketing",
+        "email_pseudo",
+        "phone_pseudo",
+        "is_active"
+      ]
+    },
+    {
+      "table": "products",
+      "status": "PASS",
+      "expected_rows": 20000,
+      "actual_rows": 20000,
+      "missing_primary_keys": 0,
+      "duplicate_primary_keys": 0,
+      "columns": [
+        "product_id",
+        "product_key",
+        "sku",
+        "category",
+        "subcategory",
+        "brand",
+        "unit_cost",
+        "list_price",
+        "vat_rate",
+        "is_active",
+        "effective_from",
+        "effective_to",
+        "is_current"
+      ]
+    },
+    {
+      "table": "stores",
+      "status": "PASS",
+      "expected_rows": 200,
+      "actual_rows": 200,
+      "missing_primary_keys": 0,
+      "duplicate_primary_keys": 0,
+      "columns": [
+        "store_id",
+        "store_key",
+        "city",
+        "format",
+        "is_active"
+      ]
+    },
+    {
+      "table": "orders",
+      "status": "PASS",
+      "expected_rows": 500000,
+      "actual_rows": 500000,
+      "missing_primary_keys": 0,
+      "duplicate_primary_keys": 0,
+      "columns": [
+        "order_id",
+        "order_ts",
+        "customer_id",
+        "channel",
+        "payment_method",
+        "status",
+        "promo_code"
+      ]
+    },
+    {
+      "table": "order_items",
+      "status": "PASS",
+      "expected_rows": 1000000,
+      "actual_rows": 1000000,
+      "missing_primary_keys": 0,
+      "duplicate_primary_keys": 0,
+      "columns": [
+        "order_item_id",
+        "order_id",
+        "product_id",
+        "qty",
+        "unit_price",
+        "discount_rate",
+        "net_amount"
+      ]
+    },
+    {
+      "table": "pos_sales",
+      "status": "PASS",
+      "expected_rows": 500000,
+      "actual_rows": 500000,
+      "missing_primary_keys": 0,
+      "duplicate_primary_keys": 0,
+      "columns": [
+        "sale_id",
+        "sale_ts",
+        "store_id",
+        "customer_id",
+        "product_id",
+        "qty",
+        "unit_price",
+        "discount_rate",
+        "net_amount"
+      ]
+    },
+    {
+      "table": "returns",
+      "status": "PASS",
+      "expected_rows": 100000,
+      "actual_rows": 100000,
+      "missing_primary_keys": 0,
+      "duplicate_primary_keys": 0,
+      "columns": [
+        "return_id",
+        "return_ts",
+        "order_id",
+        "product_id",
+        "return_qty",
+        "reason",
+        "return_amount"
+      ]
+    },
+    {
+      "table": "gl_entries",
+      "status": "PASS",
+      "expected_rows": 100000,
+      "actual_rows": 100000,
+      "missing_primary_keys": 0,
+      "duplicate_primary_keys": 0,
+      "columns": [
+        "entry_id",
+        "posting_date",
+        "account_code",
+        "cost_center",
+        "document_type",
+        "amount",
+        "currency"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "child": "orders",
+      "column": "customer_id",
+      "parent": "customers",
+      "parent_column": "customer_id",
+      "rows_checked": 500000,
+      "missing_references": 0,
+      "orphan_references": 0,
+      "status": "PASS"
+    },
+    {
+      "child": "order_items",
+      "column": "order_id",
+      "parent": "orders",
+      "parent_column": "order_id",
+      "rows_checked": 1000000,
+      "missing_references": 0,
+      "orphan_references": 0,
+      "status": "PASS"
+    },
+    {
+      "child": "order_items",
+      "column": "product_id",
+      "parent": "products",
+      "parent_column": "product_id",
+      "rows_checked": 1000000,
+      "missing_references": 0,
+      "orphan_references": 0,
+      "status": "PASS"
+    },
+    {
+      "child": "pos_sales",
+      "column": "store_id",
+      "parent": "stores",
+      "parent_column": "store_id",
+      "rows_checked": 500000,
+      "missing_references": 0,
+      "orphan_references": 0,
+      "status": "PASS"
+    },
+    {
+      "child": "pos_sales",
+      "column": "product_id",
+      "parent": "products",
+      "parent_column": "product_id",
+      "rows_checked": 500000,
+      "missing_references": 0,
+      "orphan_references": 0,
+      "status": "PASS"
+    },
+    {
+      "child": "returns",
+      "column": "order_id",
+      "parent": "orders",
+      "parent_column": "order_id",
+      "rows_checked": 100000,
+      "missing_references": 0,
+      "orphan_references": 0,
+      "status": "PASS"
+    },
+    {
+      "child": "returns",
+      "column": "product_id",
+      "parent": "products",
+      "parent_column": "product_id",
+      "rows_checked": 100000,
+      "missing_references": 0,
+      "orphan_references": 0,
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "tables_pass": 8,
+    "tables_total": 8,
+    "relationships_review": 0
+  },
+  "pos_sales_customer_policy": {
+    "anonymous_sales": 139630,
+    "policy": "Valeurs vides conservées, à confirmer métier"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "facts": {
+    "fact_order_items": {
+      "rows": 1000000,
+      "columns": [
+        "order_item_id",
+        "order_id",
+        "product_id",
+        "qty",
+        "unit_price",
+        "discount_rate",
+        "net_amount",
+        "order_ts",
+        "customer_id",
+        "channel",
+        "payment_method",
+        "status",
+        "promo_code",
+        "product_sk",
+        "customer_sk",
+        "order_date_value",
+        "date_sk"
+      ],
+      "primary_key": "order_item_id",
+      "primary_key_nulls": 0,
+      "primary_key_duplicates": 0,
+      "file": "data\\gold\\facts\\fact_order_items.parquet"
+    },
+    "fact_pos_sales": {
+      "rows": 500000,
+      "columns": [
+        "sale_id",
+        "sale_ts",
+        "store_id",
+        "customer_id",
+        "product_id",
+        "qty",
+        "unit_price",
+        "discount_rate",
+        "net_amount",
+        "product_sk",
+        "store_sk",
+        "customer_sk",
+        "sale_date_value",
+        "date_sk"
+      ],
+      "primary_key": "sale_id",
+      "primary_key_nulls": 0,
+      "primary_key_duplicates": 0,
+      "file": "data\\gold\\facts\\fact_pos_sales.parquet"
+    },
+    "fact_returns": {
+      "rows": 100000,
+      "columns": [
+        "return_id",
+        "return_ts",
+        "order_id",
+        "product_id",
+        "return_qty",
+        "reason",
+        "return_amount",
+        "product_sk",
+        "return_date_value",
+        "date_sk"
+      ],
+      "primary_key": "return_id",
+      "primary_key_nulls": 0,
+      "primary_key_duplicates": 0,
+      "file": "data\\gold\\facts\\fact_returns.parquet"
+    },
+    "fact_gl_entries": {
+      "rows": 100000,
+      "columns": [
+        "entry_id",
+        "posting_date",
+        "account_code",
+        "cost_center",
+        "document_type",
+        "amount",
+        "currency",
+        "posting_date_value",
+        "date_sk"
+      ],
+      "primary_key": "entry_id",
+      "primary_key_nulls": 0,
+      "primary_key_duplicates": 0,
+      "file": "data\\gold\\facts\\fact_gl_entries.parquet"
+    }
+  },
+  "errors": [],
+  "message": "Les quatre tables de faits Gold ont été créées et contrôlées."
+}

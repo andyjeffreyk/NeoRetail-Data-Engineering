@@ -1,0 +1,331 @@
+{
+  "generated_at_utc": "2026-10-22T23:22:33.504497+00:00",
+  "silver_path": "C:\\Users\\KETCHANGA Andy\\Documents\\NeoRetail_Project\\data\\silver",
+  "checks_count": 32,
+  "summary": {
+    "PASS": 29,
+    "WARNING": 1,
+    "REVIEW": 2
+  },
+  "results": [
+    {
+      "table": "products",
+      "rule": "unit_cost_non_negative",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Le coût unitaire ne devrait pas être négatif."
+    },
+    {
+      "table": "products",
+      "rule": "list_price_positive",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Le prix catalogue devrait être strictement positif."
+    },
+    {
+      "table": "products",
+      "rule": "vat_rate_between_0_and_1",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Le taux de TVA est attendu sous forme décimale, par exemple 0.20 pour 20 %."
+    },
+    {
+      "table": "products",
+      "rule": "validity_dates",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "effective_to peut être nul pour une version sans date de fin."
+    },
+    {
+      "table": "products",
+      "rule": "current_version_consistency",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "À confirmer selon la règle de gestion des versions produits."
+    },
+    {
+      "table": "orders",
+      "rule": "channel_allowed_values",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Valeurs autorisées : ['marketplace', 'mobile', 'web']"
+    },
+    {
+      "table": "orders",
+      "rule": "payment_method_allowed_values",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Valeurs autorisées : ['card', 'gift_card', 'transfer', 'wallet']"
+    },
+    {
+      "table": "orders",
+      "rule": "status_allowed_values",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Valeurs autorisées : ['cancelled', 'delivered', 'paid', 'shipped']"
+    },
+    {
+      "table": "orders",
+      "rule": "valid_order_timestamp",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "La date/heure de commande doit être interprétable."
+    },
+    {
+      "table": "order_items",
+      "rule": "qty_positive",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "La valeur doit être présente et strictement positive."
+    },
+    {
+      "table": "order_items",
+      "rule": "unit_price_positive",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "La valeur doit être présente et strictement positive."
+    },
+    {
+      "table": "order_items",
+      "rule": "net_amount_positive",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "La valeur doit être présente et strictement positive."
+    },
+    {
+      "table": "order_items",
+      "rule": "discount_between_0_and_1",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Le taux de remise doit être compris entre 0 et 1."
+    },
+    {
+      "table": "order_items",
+      "rule": "net_amount_formula_review",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Contrôle exploratoire uniquement : formule supposée, non confirmée par une règle métier officielle. Les montants sources sont conservés. Les écarts dépassant 0,03 € après arrondi sont à investiguer."
+    },
+    {
+      "table": "pos_sales",
+      "rule": "qty_positive",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "La valeur doit être présente et strictement positive."
+    },
+    {
+      "table": "pos_sales",
+      "rule": "unit_price_positive",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "La valeur doit être présente et strictement positive."
+    },
+    {
+      "table": "pos_sales",
+      "rule": "net_amount_positive",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "La valeur doit être présente et strictement positive."
+    },
+    {
+      "table": "pos_sales",
+      "rule": "discount_between_0_and_1",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Le taux de remise doit être compris entre 0 et 1."
+    },
+    {
+      "table": "pos_sales",
+      "rule": "net_amount_formula_review",
+      "status": "REVIEW",
+      "anomaly_count": 151,
+      "examples": [
+        {
+          "qty": 7.0,
+          "unit_price": 74.62,
+          "discount_rate": 0.05,
+          "net_amount": 496.26
+        },
+        {
+          "qty": 7.0,
+          "unit_price": 57.04,
+          "discount_rate": 0.05,
+          "net_amount": 379.28
+        },
+        {
+          "qty": 7.0,
+          "unit_price": 200.68,
+          "discount_rate": 0.1,
+          "net_amount": 1264.32
+        },
+        {
+          "qty": 7.0,
+          "unit_price": 10.55,
+          "discount_rate": 0.05,
+          "net_amount": 70.12
+        },
+        {
+          "qty": 7.0,
+          "unit_price": 49.72,
+          "discount_rate": 0.1,
+          "net_amount": 313.2
+        }
+      ],
+      "details": "Contrôle exploratoire uniquement : formule supposée, non confirmée par une règle métier officielle. Les montants sources sont conservés. Les écarts dépassant 0,03 € après arrondi sont à investiguer."
+    },
+    {
+      "table": "returns",
+      "rule": "return_qty_positive",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "La quantité et le montant du retour sont attendus positifs."
+    },
+    {
+      "table": "returns",
+      "rule": "return_amount_positive",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "La quantité et le montant du retour sont attendus positifs."
+    },
+    {
+      "table": "returns",
+      "rule": "reason_allowed_values",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Valeurs autorisées : ['damaged', 'late', 'not_as_expected', 'other', 'size_issue', 'wrong_item']"
+    },
+    {
+      "table": "returns",
+      "rule": "valid_return_timestamp",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "La date/heure du retour doit être interprétable."
+    },
+    {
+      "table": "gl_entries",
+      "rule": "currency_allowed_values",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Valeurs autorisées : ['EUR']"
+    },
+    {
+      "table": "gl_entries",
+      "rule": "document_type_allowed_values",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Valeurs autorisées : ['ADJUSTMENT', 'PAYMENT', 'PURCHASE', 'REFUND', 'SALE']"
+    },
+    {
+      "table": "gl_entries",
+      "rule": "valid_posting_date",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "La date comptable doit être interprétable."
+    },
+    {
+      "table": "customers",
+      "rule": "missing_region",
+      "status": "WARNING",
+      "anomaly_count": 100,
+      "examples": [
+        {
+          "customer_id": "C00000997"
+        },
+        {
+          "customer_id": "C00001994"
+        },
+        {
+          "customer_id": "C00002991"
+        },
+        {
+          "customer_id": "C00003988"
+        },
+        {
+          "customer_id": "C00004985"
+        }
+      ],
+      "details": "Les régions manquantes sont signalées, pas inventées."
+    },
+    {
+      "table": "customers",
+      "rule": "consent_marketing_boolean",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Valeurs attendues : True ou False."
+    },
+    {
+      "table": "customers",
+      "rule": "is_active_boolean",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Valeurs attendues : True ou False."
+    },
+    {
+      "table": "stores",
+      "rule": "format_allowed_values",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Valeurs autorisées : ['hyper', 'outlet', 'proximity', 'super']"
+    },
+    {
+      "table": "stores",
+      "rule": "is_active_boolean",
+      "status": "PASS",
+      "anomaly_count": 0,
+      "examples": [],
+      "details": "Valeurs attendues : True ou False."
+    },
+    {
+      "table": "pos_sales",
+      "rule": "anonymous_sales",
+      "status": "REVIEW",
+      "anomaly_count": 139630,
+      "examples": [
+        {
+          "sale_id": "PS0000000005"
+        },
+        {
+          "sale_id": "PS0000000010"
+        },
+        {
+          "sale_id": "PS0000000016"
+        },
+        {
+          "sale_id": "PS0000000021"
+        },
+        {
+          "sale_id": "PS0000000022"
+        }
+      ],
+      "details": "Les ventes sans client identifié sont conservées ; vérifier qu'elles correspondent bien au fonctionnement métier."
+    }
+  ]
+}
